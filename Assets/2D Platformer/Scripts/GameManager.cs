@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Platformer
@@ -32,9 +33,9 @@ namespace Platformer
             }
         }
 
-        private void ReloadLevel()
+        public void ReloadLevel()
         {
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene("Scene1");
         }
     }
 }

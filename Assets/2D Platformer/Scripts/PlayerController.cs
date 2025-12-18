@@ -11,19 +11,18 @@ namespace Platformer
         private float moveInput;
 
         private bool facingRight = false;
-        [HideInInspector]
         public bool deathState = false;
 
         private bool isGrounded;
         public Transform groundCheck;
 
-        private Rigidbody2D rigidbody;
+        private Rigidbody2D _rigidbody;
         private Animator animator;
         private GameManager gameManager;
 
         void Start()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            _rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
@@ -48,7 +47,7 @@ namespace Platformer
             }
             if(Input.GetKeyDown(KeyCode.Space) && isGrounded )
             {
-                rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                _rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             }
             if (!isGrounded)animator.SetInteger("playerState", 2); // Turn on jump animation
 
