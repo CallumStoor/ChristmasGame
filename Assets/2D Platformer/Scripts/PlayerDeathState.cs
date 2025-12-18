@@ -18,7 +18,7 @@ namespace Platformer
 
         IEnumerator Death()
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
             Destroy(gameObject);
         }
     }
