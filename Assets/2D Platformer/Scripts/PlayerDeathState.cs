@@ -12,7 +12,7 @@ namespace Platformer
         void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            _rigidbody.AddForce(new Vector2(1, 0.5f) * jumpForce, ForceMode2D.Impulse);
         }
     }
 }

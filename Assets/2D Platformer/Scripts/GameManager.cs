@@ -32,7 +32,6 @@ namespace Platformer
                 deathPlayer.transform.localScale = new Vector3(playerGameObject.transform.localScale.x, playerGameObject.transform.localScale.y, playerGameObject.transform.localScale.z);
                 player.deathState = false;
                 GameObject.Find("Wall").GetComponent<Wall>().enabled = false;
-                Invoke("ReloadLevel", 3);
             }
         }
 
