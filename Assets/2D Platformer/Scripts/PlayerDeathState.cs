@@ -13,6 +13,7 @@ namespace Platformer
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            StartCoroutine(Death());
         }
 
         IEnumerator Death()
