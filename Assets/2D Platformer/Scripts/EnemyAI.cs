@@ -10,17 +10,17 @@ namespace Platformer
         public LayerMask ground;
         public LayerMask wall;
 
-        private Rigidbody2D rigidbody; 
+        private Rigidbody2D playerRigidbody; 
         public Collider2D triggerCollider;
         
         void Start()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            playerRigidbody = GetComponent<Rigidbody2D>();
         }
 
         void Update()
         {
-            rigidbody.linearVelocity = new Vector2(moveSpeed, rigidbody.linearVelocity.y);
+            playerRigidbody.linearVelocity = new Vector2(moveSpeed, playerRigidbody.linearVelocity.y);
         }
 
         void FixedUpdate()
