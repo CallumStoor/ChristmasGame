@@ -15,10 +15,12 @@ namespace Platformer
         private PlayerController player;
         public GameObject deathPlayerPrefab;
         public Text coinText;
+        private GameObject wall;
 
         void Start()
         {
             player = GameObject.Find("Player").GetComponent<PlayerController>();
+            wall = GameObject.Find("Wall");
         }
 
         void Update()
@@ -31,7 +33,7 @@ namespace Platformer
                 GameObject deathPlayer = (GameObject)Instantiate(deathPlayerPrefab, playerGameObject.transform.position, playerGameObject.transform.rotation);
                 deathPlayer.transform.localScale = new Vector3(playerGameObject.transform.localScale.x, playerGameObject.transform.localScale.y, playerGameObject.transform.localScale.z);
                 player.deathState = false;
-                GameObject.Find("Wall").GetComponent<Wall>().enabled = false;
+                wall.GetComponent<Wall>().enabled = false;
             }
         }
 
@@ -42,9 +44,14 @@ namespace Platformer
 
         public void ReloadCheckpoint()
         {
-            if (!player.lastCheckpoint)
+            if (player.lastCheckpoint != null)
             {
+                wall.transform.position = playerGameObject.transform.position + (Vector3.left * 4);
                 playerGameObject.transform.position = player.lastCheckpoint.transform.position;
+                player.deathState = false;
+                wall.GetComponent<Wall>().enabled = true;
+                playerGameObject.SetActive(true);
+                deathScreen.SetActive(false);
             }
             else
             {
