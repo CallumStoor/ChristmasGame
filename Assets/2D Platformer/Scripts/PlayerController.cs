@@ -13,6 +13,8 @@ namespace Platformer
         private bool facingRight = false;
         public bool deathState = false;
 
+        public GameObject lastCheckpoint;
+
         private bool isGrounded;
         public Transform groundCheck;
 
@@ -87,12 +89,19 @@ namespace Platformer
             }
         }
 
+        
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.tag == "Coin")
             {
                 gameManager.coinsCounter += 1;
                 Destroy(other.gameObject);
+            }
+
+            if (other.gameObject.CompareTag("Checkpoint"))
+            {
+                lastCheckpoint = other.gameObject;
             }
         }
     }
