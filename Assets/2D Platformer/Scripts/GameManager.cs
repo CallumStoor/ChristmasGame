@@ -42,7 +42,14 @@ namespace Platformer
 
         public void ReloadCheckpoint()
         {
-            playerGameObject.transform.position = player.lastCheckpoint.transform.position;
+            if (!player.lastCheckpoint)
+            {
+                playerGameObject.transform.position = player.lastCheckpoint.transform.position;
+            }
+            else
+            {
+                ReloadLevel();
+            }
         }
     }
 }
