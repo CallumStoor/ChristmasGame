@@ -46,7 +46,7 @@ namespace Platformer
         {
             if (player.lastCheckpoint != null)
             {
-                wall.transform.position = playerGameObject.transform.position + (Vector3.left * 4);
+                wall.transform.position = player.lastCheckpoint.transform.position - new Vector3( 10, 0, 0);
                 playerGameObject.transform.position = player.lastCheckpoint.transform.position;
                 player.deathState = false;
                 wall.GetComponent<Wall>().enabled = true;
@@ -58,5 +58,7 @@ namespace Platformer
                 ReloadLevel();
             }
         }
+
+
     }
 }
