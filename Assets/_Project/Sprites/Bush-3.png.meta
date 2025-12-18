@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b1364ccf6204faf41ad98deac857c225
+guid: 6b7de8586e51abe4b8c37eed8367a278
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2868539044483428322
-    second: wall_0
+      213: 3387095061577727352
+    second: Bush-3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 72
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall_0
+      name: Bush-3_0
       rect:
         serializedVersion: 2
         x: 3
-        y: 1
-        width: 24
-        height: 93
+        y: 0
+        width: 36
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2efe5c210191fc720800000000000000
-      internalID: 2868539044483428322
+      spriteID: 87df1dd4301610f20800000000000000
+      internalID: 3387095061577727352
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wall_0: 2868539044483428322
+      Bush-3_0: 3387095061577727352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
