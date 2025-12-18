@@ -27,6 +27,9 @@ namespace Platformer
             _rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            
+            if(lastCheckpoint != null)
+                transform.position = lastCheckpoint.transform.position;
         }
 
         private void FixedUpdate()

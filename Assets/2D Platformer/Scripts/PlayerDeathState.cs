@@ -14,6 +14,12 @@ namespace Platformer
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        IEnumerator Death()
+        {
+            yield return new WaitForSeconds(4f);
+            Destroy(gameObject);
+        }
     }
 }
 
